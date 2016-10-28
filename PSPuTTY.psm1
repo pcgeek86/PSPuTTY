@@ -1,6 +1,9 @@
-$PuTTYPath = 'Software\SimonTatham\PuTTY'
+using module PSPuTTY-Models
+
 $PSPuTTY = $ExecutionContext.SessionState.Module
+$PSPuTTY.PrivateData['PuTTYRegPath'] = 'Software\SimonTatham\PuTTY' 
 Write-Verbose -Message ('Module path is: {0}' -f $PSPuTTY.ModulePath)
+
 
 #region Aliases
 ### This section contains aliases that will be exported from the module.
@@ -22,6 +25,14 @@ foreach ($AliasFile in $AliasFileList){
             Write-Warning -Message ('Alias skipped in file {0}' -f $AliasFile.Name);
         }
     }
+}
+#endregion
+
+#region Classes
+$ClassList = Get-ChildItem -Path $PSScriptRoot\Models;
+foreach ($Class in $ClassList) {
+    Write-Verbose -Message ('Importing class file: {0}' -f $Class.FullName);
+	. $Class.FullName;
 }
 #endregion
 
