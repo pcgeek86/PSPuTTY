@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+  <SelectionSets>
+    <SelectionSet>
+      <Name>PSPuTTYSession</Name>
+      <Types>
+        <TypeName>PSPuTTYSession</TypeName>
+      </Types>
+    </SelectionSet>
+  </SelectionSets>
+  <ViewDefinitions>
+    <View>
+      <Name>PSPuTTYSession</Name>
+      <ViewSelectedBy>
+        <TypeName>PSPuTTYSession</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Width>30</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>20</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>6</Width>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>Name</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Host</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Port</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+  </ViewDefinitions>
+</Configuration>
