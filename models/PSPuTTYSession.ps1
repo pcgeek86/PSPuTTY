@@ -3,6 +3,7 @@ class PSPuTTYSession {
   [string] $Hostname
   [int] $Port
   [string] $Theme
+  [string] $RealName
 
   PSPuTTYSession (
     [string] $Name,
@@ -16,8 +17,13 @@ class PSPuTTYSession {
     $this.Theme = $Theme
   }
 
+  PSPuTTYSession ([string] $Name, [string] $RealName) {
+    $this.Name = $Name
+    $this.RealName = $RealName
+  }
+
   ### Writes the session to the Windows Registry
   [void] Write() {
-      
+      ### TODO: Implement
   }
 }
