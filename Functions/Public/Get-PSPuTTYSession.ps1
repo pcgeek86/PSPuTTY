@@ -5,24 +5,39 @@ function Get-PSPuTTYSession {
   <#
   .Synopsis
   Returns a list of configured PuTTY sessions.
+  
+  .Outputs
+  [PSPuTTYSession]
   #>
   [CmdletBinding()]
   param (
+    [Parameter(Mandatory = $false)]
     [string] $Name
   )
 
-  Add-Type -AssemblyName System.Web
   $Command = $PSCmdlet.MyInvocation.MyCommand.Name
   $Module = $PSCmdlet.MyInvocation.MyCommand.Module
-  $SessionRegPath = '{0}\Sessions' -f $Module.PrivateData['PuTTYRegPath']
 
-  $RegCurrentUser = [RegistryKey]::OpenBaseKey([RegistryHive]::CurrentUser, [RegistryView]::Default)
-  $PuTTYSessions = $RegCurrentUser.OpenSubKey($SessionRegPath)
+  ### Get a reference to the PuTTY Registry sessions subkey
+  $PuTTYSessions = Get-PSPuTTYRegistrySessions
+
+  ### List out the sessions under the PuTTY sessions subkey
+  ### NOTE: Sessions are stored as URL-encoded names, and do not have spaces, even if the session name does have spaces.
+  ###       The PSPuTTYSession data model has properties to store both the URL encoded name, and the URL decoded (natural) session name
   $KeyList = $PuTTYSessions.GetSubKeyNames()
 
+  ### Empty array to hold a list of sessions
+  $SessionList = @()
+
   foreach ($Key in $KeyList) {
-    $KeyName = [HttpUtility]::UrlDecode($Key); 
+    $KeyName = [System.Web.HttpUtility]::UrlDecode($Key) 
     Write-Verbose -Message ('Found PuTTY saved session: {0}, URL decoded: {1}' -f $Key, $KeyName)
-    [PSPuTTYSession]::new($Key, $KeyName)
+    $SessionList += [PSPuTTYSession]::new($Key, $KeyName)
+  }
+
+  if ($PSBoundParameters.ContainsKey('Name')) {
+    Write-Output -InputObject $SessionList.Where({ $PSItem.RealName -eq $Name })
+  } else {
+    Write-Output -InputObject $SessionList
   }
 }
