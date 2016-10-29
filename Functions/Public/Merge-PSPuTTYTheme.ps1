@@ -33,7 +33,6 @@ function Merge-PSPuTTYTheme {
         [PSPuTTYTheme] $Theme
     )
 
-    Write-Verbose -Message
     Write-Verbose -Message ('Using parameter set: {0}' -f $PSCmdlet.ParameterSetName)
 
     ### If the user specifies a session name, then we need to URL encode it
