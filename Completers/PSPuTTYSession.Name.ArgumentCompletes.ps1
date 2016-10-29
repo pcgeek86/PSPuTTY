@@ -10,7 +10,7 @@ $ScriptBlock = {
     param($commandName, $parameterName, $wordToComplete, $commandAst, $fakeBoundParameter)
 
     $ItemList = Get-PSPuTTYSession | Where-Object { $PSItem.Name -match $wordToComplete } | ForEach-Object {
-        $CompletionText = $PSItem.RealName
+        $CompletionText = '''{0}''' -f $PSItem.RealName
         $ToolTip = 'PuTTY session: {0}.' -f $PSItem.Name
         $ListItemText = $PSItem.Name
         $CompletionResultType = [System.Management.Automation.CompletionResultType]::ParameterValue
