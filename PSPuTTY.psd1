@@ -68,6 +68,7 @@ FunctionsToExport = @(
     'Get-PSPuTTYSession'
     'Get-PSPuTTYTheme'
     'Merge-PSPuTTYTheme'
+    'Remove-PSPuTTYSession'
     );
 
 # Cmdlets to export from this module
