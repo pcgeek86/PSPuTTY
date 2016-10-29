@@ -2,12 +2,11 @@ $PSPuTTY = $ExecutionContext.SessionState.Module
 $PSPuTTY.PrivateData['PuTTYRegPath'] = 'Software\SimonTatham\PuTTY' 
 Write-Verbose -Message ('Module path is: {0}' -f $PSPuTTY.ModulePath)
 
-
 #region Aliases
 ### This section contains aliases that will be exported from the module.
 
 ### Import all aliases from the Aliases folder.
-$AliasFileList = Get-ChildItem -Path $PSScriptRoot\Aliases\*Aliases.json;
+$AliasFileList = Get-ChildItem -Path $PSScriptRoot\Aliases\*Aliases.json -ErrorAction Ignore;
 foreach ($AliasFile in $AliasFileList){
 	$AliasJson = ConvertFrom-Json -InputObject (Get-Content -Path $AliasFile -Raw);
     foreach ($Alias in $AliasJson.Aliases) {
