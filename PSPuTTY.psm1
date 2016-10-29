@@ -1,5 +1,3 @@
-using module PSPuTTY-Models
-
 $PSPuTTY = $ExecutionContext.SessionState.Module
 $PSPuTTY.PrivateData['PuTTYRegPath'] = 'Software\SimonTatham\PuTTY' 
 Write-Verbose -Message ('Module path is: {0}' -f $PSPuTTY.ModulePath)
