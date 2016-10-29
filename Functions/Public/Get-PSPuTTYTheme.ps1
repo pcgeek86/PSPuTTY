@@ -2,6 +2,9 @@ function Get-PSPuTTYTheme {
   <#
   .Synopsis
   Returns a list of supported PuTTY themes that are distributed with this PowerShell module.
+
+  .Outputs
+  [PSPuTTYTheme]
   #>
   [CmdletBinding()]
   param (
@@ -12,7 +15,6 @@ function Get-PSPuTTYTheme {
   $Command = $PSCmdlet.MyInvocation.MyCommand.Name
   $Module = $PSCmdlet.MyInvocation.MyCommand.Module
 
-  Write-Verbose -Message ('{0}: {1}' -f $Command, ($Module | ConvertTo-Json -Depth 1))
   $ThemeFileList = Get-ChildItem -Path ('{0}\Themes' -f $Module.ModuleBase)
   $ThemeList = @()
 
@@ -22,7 +24,7 @@ function Get-PSPuTTYTheme {
     $ThemeList += [PSPuTTYTheme]::new($ThemeJson)
   }
 
-  if ($PSBoundParameters.ContainsKey($Name)) {
+  if ($PSBoundParameters.ContainsKey('Name')) {
     Write-Output -InputObject $ThemeList.Where({ $PSItem.Name -like $Name })
   } else {
     Write-Output -InputObject $ThemeList
