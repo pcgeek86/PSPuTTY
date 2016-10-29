@@ -8,6 +8,10 @@ You can use PSPuTTY to easily change the color scheme of your PuTTY saved sessio
 The `Merge-PSPuTTYTheme` command will merge the specified theme with the specified PuTTY saved session.
 
 ```PowerShell
+# Get a list of supported themes in this module
+Get-PSPuTTYTheme 
+
+# Merge the theme with an existing PuTTY saved session 
 Merge-PSPuTTYTheme -SessionName 'AWS Ubuntu 16 Large' -ThemeName 'Birds of Paradise'
 ```
 
@@ -40,3 +44,7 @@ When you specify one or more sessions that you want to delete, you'll be prompte
 Remove-PSPuTTYSession -Name Session1, Session2
 ```
 
+## Themes
+
+The color themes for PuTTY that are included in this PowerShell module were not developed by this project.
+Rather, the color themes are taken from, what is presumed to be the original creator, a Russian website called http://putty.org.ru. 
