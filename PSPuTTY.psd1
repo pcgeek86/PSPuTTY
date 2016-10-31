@@ -7,7 +7,7 @@
 RootModule = 'PSPuTTY.psm1';
 
 # Version number of this module.
-ModuleVersion = '0.1';
+ModuleVersion = '0.1.1';
 
 # ID used to uniquely identify this module
 GUID = '09f9c88b-06ab-46d1-9661-f29d0bf30f1e';
@@ -25,7 +25,7 @@ Copyright = '(c) Art of Shell LLC 2016. All rights reserved.';
 Description = 'This PowerShell module enables you to switch between color themes for your saved PuTTY sessions easily.';
 
 # Minimum version of the Windows PowerShell engine required by this module
-PowerShellVersion = '4.0';
+PowerShellVersion = '5.0';
 
 # Name of the Windows PowerShell host required by this module
 # PowerShellHostName = ''
