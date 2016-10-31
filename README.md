@@ -47,10 +47,13 @@ Remove-PSPuTTYSession -Name Session1, Session2
 ## Themes
 
 The color themes for PuTTY that are included in this PowerShell module were not developed by this project.
-Rather, the color themes are taken from, what is presumed to be the original creator, a Russian website called http://putty.org.ru. 
+Rather, the color themes are primarily taken from, what is presumed to be the original creator, a Russian website called http://putty.org.ru. 
+
+## Video
+
+Here's a [YouTube video](https://www.youtube.com/watch?v=AeIDPMJxGHI) that briefly introduces the PowerShell module, and a couple of its useful commands.
 
 # Glossary
 
 - PuTTY Saved Session - A pre-configure PuTTY session that appears in the **Saved Sessions** list in the PuTTY GUI 
 - PuTTY Theme - A properly formatted JSON file in the `./themes` directory
-- 
