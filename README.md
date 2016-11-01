@@ -46,14 +46,38 @@ Remove-PSPuTTYSession -Name Session1, Session2
 
 ## Themes
 
-The color themes for PuTTY that are included in this PowerShell module were not developed by this project.
-Rather, the color themes are primarily taken from, what is presumed to be the original creator, a Russian website called http://putty.org.ru. 
+Some of the color themes for PuTTY, that are included in this PowerShell module, were not developed by this project.
+Rather, the color themes are primarily taken from, what is presumed to be the original creator, a Russian website called http://putty.org.ru.
+Each of the theme files has a `URL` property that indicates where the theme was taken from.
 
 ## Video
 
 Here's a [YouTube video](https://www.youtube.com/watch?v=AeIDPMJxGHI) that briefly introduces the PowerShell module, and a couple of its useful commands.
 
+# Known Issues
+
+As of right now, this module is in early preview. There are a few, primary commands that are currently functional:
+
+- Merge-PSPuTTYTheme - Updates the theme for a PuTTY saved session 
+- Get-PSPuTTYTheme - List out the PuTTY themes that are supported 
+- Get-PSPuTTYSession - List out the PuTTY saved session configurations
+- Invoke-PSPuTTYSession - Kick off a new PuTTY session, with the specified saved session name
+
+These following commands currently **DO NOT** work, until they're implemented:
+
+- New-PSPuTTYSession - Create a new PuTTY saved session
+- Remove-PSPuTTYSession - Delete a PuTTY saved session
+- Export-PSPuTTYSession - Export one or more PuTTY saved sessions to a file
+- Import-PSPuTTYSession - Import one or more PuTTY saved sessions from a file 
+
 # Glossary
 
 - PuTTY Saved Session - A pre-configure PuTTY session that appears in the **Saved Sessions** list in the PuTTY GUI 
 - PuTTY Theme - A properly formatted JSON file in the `./themes` directory
+
+# Contributors
+
+This PowerShell module wouldn't be possible without the contributors listed below.
+
+- [Trevor Sullivan](https://trevorsullivan.net) (Colorado, United States of America)
+- [Joshua King](http://king.geek.nz/) (New Zealand)
