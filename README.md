@@ -31,7 +31,7 @@ Now, you can easily invoke a PuTTY session directly from PowerShell, without hav
 
 The `Invoke-PSPuTTYSession` provides Intellisense / auto-completion for your PuTTY saved sessions, making it significantly easier for you to connect to the session you want to!
 
-```
+```PowerShell
 Invoke-PSPuTTYSession -Name 'AWS Ubuntu'
 ```
 
