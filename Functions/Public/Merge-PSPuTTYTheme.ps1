@@ -7,7 +7,7 @@ function Merge-PSPuTTYTheme {
 
     .Parameter SessionName
     The name of the PuTTY saved session that will have its theme updated.
-    
+
     NOTE: The session name will be URL-encoded, to conform to the stored value in the registry. Make sure that you do not use the URL-encoded name of the session.
           Rather, use the "friendly name" of the session, that appears in the PuTTY Saved Session list.
 
@@ -31,6 +31,7 @@ function Merge-PSPuTTYTheme {
       , [Parameter(Mandatory = $true, ParameterSetName = 'SessionNameThemeObject')]
         [Parameter(Mandatory = $true, ParameterSetName = 'SessionObjectThemeObject')]
         [PSPuTTYTheme] $Theme
+      , [string] $TerminalType = 'xterm'
     )
 
     Write-Verbose -Message ('Using parameter set: {0}' -f $PSCmdlet.ParameterSetName)
@@ -56,5 +57,5 @@ function Merge-PSPuTTYTheme {
       $PuTTYSessionReg.SetValue("Colour$Number", $Theme."Colour$Number", [Microsoft.Win32.RegistryValueKind]::String)
     }
 
-    $PuTTYSessionReg.SetValue('TerminalType', 'putty-256color')
+    $PuTTYSessionReg.SetValue('TerminalType', $TerminalType)
 }
