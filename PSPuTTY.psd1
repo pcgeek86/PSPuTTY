@@ -66,11 +66,11 @@ FormatsToProcess = @(
 # Functions to export from this module
 FunctionsToExport = @(
     'Invoke-PSPuTTYSession'
-    'New-PSPuTTYSession'
+    #'New-PSPuTTYSession'
     'Get-PSPuTTYSession'
     'Get-PSPuTTYTheme'
     'Merge-PSPuTTYTheme'
-    'Remove-PSPuTTYSession'
+    #'Remove-PSPuTTYSession'
     );
 
 # Cmdlets to export from this module
