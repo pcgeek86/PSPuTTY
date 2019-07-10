@@ -34,13 +34,13 @@ describe -Name 'PSPuTTY PowerShell module' {
 			(Get-Command -Module $ModuleName -Name Invoke-PSPuTTYSession).Count | Should be 1
 		}
 
-		it 'Should have a New-PSPuTTYSession command' {
-			(Get-Command -Module $ModuleName -Name New-PSPuTTYSession).Count | Should be 1
-		}
+		#it 'Should have a New-PSPuTTYSession command' {
+		#	(Get-Command -Module $ModuleName -Name New-PSPuTTYSession).Count | Should be 1
+		#}
 
-		it 'Should have a Remove-PSPuTTYSession command' {
-			(Get-Command -Module $ModuleName -Name Remove-PSPuTTYSession).Count | Should be 1
-		}
+		#it 'Should have a Remove-PSPuTTYSession command' {
+		#	(Get-Command -Module $ModuleName -Name Remove-PSPuTTYSession).Count | Should be 1
+		#}
 	}
 
 	context -Name 'Get-PSPuTTYTheme' {
@@ -61,9 +61,9 @@ describe -Name 'PSPuTTY PowerShell module' {
 		}
 	}
 
-	context -Name 'Remove-PSPuTTYSession' -Fixture {
-		it 'Should require input parameters' {
-			{ Start-Job -ScriptBlock { } } | Should throw
-		}
-	}
+	#context -Name 'Remove-PSPuTTYSession' -Fixture {
+	#	it 'Should require input parameters' {
+	#		{ Start-Job -ScriptBlock { } } | Should throw
+	#	}
+	#}
 }

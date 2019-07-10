@@ -15,7 +15,7 @@ Get-PSPuTTYTheme
 Merge-PSPuTTYTheme -SessionName 'AWS Ubuntu 16 Large' -ThemeName 'Birds of Paradise'
 ```
 
-## Create a new PuTTY Session
+## Create a new PuTTY Session (Not Implemented)
 
 If you want to create or import an array of PuTTY sessions, you can use `PSPuTTY` to achieve this.
 Using the simple `New-PSPuTTYSession` command, you can create a new saved session and easily access it from PuTTY at any time.
@@ -35,7 +35,7 @@ The `Invoke-PSPuTTYSession` provides Intellisense / auto-completion for your PuT
 Invoke-PSPuTTYSession -Name 'AWS Ubuntu'
 ```
 
-## Remove a PuTTY Session
+## Remove a PuTTY Session (Not Implemented)
 
 You can automate the cleanup of your PuTTY saved sessions by using the `Remove-PSPuTTYSession` command.
 When you specify one or more sessions that you want to delete, you'll be prompted with Intellisense / auto-completion for the saved session names.
